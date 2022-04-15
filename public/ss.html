@@ -1,0 +1,302 @@
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9274699879085709"
+     crossorigin="anonymous"></script>
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+
+
+  <title>AI Assistant Blob</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+  
+<style>
+#blob {
+  position: relative;
+}
+#blob canvas {
+  width: 1000px;
+  margin-top: -7%;
+}
+@media (max-width: 1200px) {
+  #blob canvas {
+    margin-top: -10%;
+    width: 800px;
+  }
+}
+@media (max-width: 600px) {
+  #blob canvas {
+    width: 800px;
+  }
+}
+
+.controls {
+  background: #3F4656;
+  display: flex;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 4px 20px -1px rgba(18, 22, 33, 0.7);
+}
+@media (max-width: 1200px) {
+  .controls {
+    margin-top: -4%;
+  }
+}
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+  }
+}
+.controls label {
+  color: #CDD9ED;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 16px;
+}
+@media (max-width: 600px) {
+  .controls label {
+    margin-bottom: 12px;
+  }
+}
+.controls [type=range] {
+  width: 160px;
+}
+@media (max-width: 600px) {
+  .controls [type=range] {
+    width: 280px;
+  }
+}
+.controls > div:not(:last-child) {
+  margin-right: 20px;
+}
+@media (max-width: 600px) {
+  .controls > div:not(:last-child) {
+    margin: 0 0 24px 0;
+  }
+}
+
+.rangeSlider {
+  position: relative;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.rangeSlider.rangeSlider__horizontal {
+  height: 10px;
+  width: 160px;
+}
+.rangeSlider .rangeSlider__fill {
+  border-radius: 7px;
+  background: #fff;
+  position: absolute;
+}
+.rangeSlider .rangeSlider__fill:before {
+  content: "";
+  left: -2px;
+  top: -2px;
+  bottom: -2px;
+  right: -2px;
+  border: 2px solid #3F4656;
+  border-radius: 6px;
+  position: absolute;
+}
+.rangeSlider .rangeSlider__fill__horizontal {
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.rangeSlider .rangeSlider__handle {
+  border: 2px solid #3F4656;
+  cursor: grab;
+  cursor: -webkit-grab;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+.rangeSlider .rangeSlider__handle__horizontal {
+  top: -7px;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Source Sans Pro", Arial;
+  background: #1c1f29;
+}
+body .dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+body .dribbble img {
+  display: block;
+  height: 28px;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div id="blob">
+    <canvas></canvas>
+</div>
+
+<div class="controls">
+    <div>
+        <label>Speed</label>
+        <input type="range" min="10" max="120" value="13" step="1" name="speed">
+    </div>
+    <div>
+        <label>Spikes</label>
+        <input type="range" min=".05" max="2" value=".6" step=".05" name="spikes">
+    </div>
+    <div>
+        <label>Processing</label>
+        <input type="range" min=".6" max="2.4" value="1" step=".01" name="processing">
+    </div>
+</div>
+
+<!-- dribbble -->
+<a class="dribbble" href="https://dribbble.com/shots/6640580-AI-Assistant" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js'></script>
+<script src='https://aaroniker.me/range.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js'></script>
+      <script id="rendered-js" >
+for (let i = 0, element; element = document.querySelectorAll('input[type="range"]')[i++];) {
+  rangeSlider.create(element, {
+    polyfill: true });
+
+}
+
+$(document).ready(function () {
+
+  let speedSlider = $('input[name="speed"]'),
+  spikesSlider = $('input[name="spikes"]'),
+  processingSlider = $('input[name="processing"]');
+
+  let $canvas = $('#blob canvas'),
+  canvas = $canvas[0],
+  renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    context: canvas.getContext('webgl2'),
+    antialias: true,
+    alpha: true }),
+
+  simplex = new SimplexNoise();
+
+  renderer.setSize($canvas.width(), $canvas.height());
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
+
+  let scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(45, $canvas.width() / $canvas.height(), 0.1, 1000);
+
+  camera.position.z = 5;
+
+  let geometry = new THREE.SphereGeometry(.8, 128, 128);
+
+  let material = new THREE.MeshPhongMaterial({
+    color: 0xE4ECFA,
+    shininess: 100 });
+
+
+  let lightTop = new THREE.DirectionalLight(0xFFFFFF, .7);
+  lightTop.position.set(0, 500, 200);
+  lightTop.castShadow = true;
+  scene.add(lightTop);
+
+  let lightBottom = new THREE.DirectionalLight(0xFFFFFF, .25);
+  lightBottom.position.set(0, -500, 400);
+  lightBottom.castShadow = true;
+  scene.add(lightBottom);
+
+  let ambientLight = new THREE.AmbientLight(0x798296);
+  scene.add(ambientLight);
+
+  let sphere = new THREE.Mesh(geometry, material);
+
+  scene.add(sphere);
+
+  let update = () => {
+
+    let time = performance.now() * 0.00001 * speedSlider.val() * Math.pow(processingSlider.val(), 3),
+    spikes = spikesSlider.val() * processingSlider.val();
+
+    for (let i = 0; i < sphere.geometry.vertices.length; i++) {
+      let p = sphere.geometry.vertices[i];
+      p.normalize().multiplyScalar(1 + 0.3 * simplex.noise3D(p.x * spikes, p.y * spikes, p.z * spikes + time));
+    }
+
+    sphere.geometry.computeVertexNormals();
+    sphere.geometry.normalsNeedUpdate = true;
+    sphere.geometry.verticesNeedUpdate = true;
+
+  };
+
+  function animate() {
+    update();
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 

@@ -1,0 +1,12 @@
+{
+    "port": 8443,
+    "ssl": false,
+    "title": "rexprox",
+    "prefix": "/rexprox/",
+    "codec": "xor",
+    "blacklist": ["accounts.google.com"],
+    "blacklist": ["classroom.google.com"],
+    "smokeprefix": "/rexprox2/"
+} 
+
+
